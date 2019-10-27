@@ -35,7 +35,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    //@AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult result) {
         if (null != driver) {
             driver.quit();
