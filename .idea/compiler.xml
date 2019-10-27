@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.flipkart.flipkartAutomation.main" target="1.8" />
+      <module name="com.flipkart.flipkartAutomation.test" target="1.8" />
       <module name="flipkartAutomation.flipkartAutomation.main" target="1.8" />
       <module name="flipkartAutomation.flipkartAutomation.test" target="1.8" />
     </bytecodeTargetLevel>
