@@ -35,15 +35,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    protected void navigateToRefresh() {
-        driver.navigate().refresh();
-    }
-
-    protected String getCurrentURl() {
-        return driver.getCurrentUrl();
-    }
-
-    @AfterMethod(alwaysRun = true)
+    //@AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult result) {
         if (null != driver) {
             driver.quit();

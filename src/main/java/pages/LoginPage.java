@@ -20,11 +20,11 @@ public class LoginPage extends BasePage{
     }
 
 
-    public void guestUserLogin() {
+    public void loginAsGuestUser() {
         waitForElementToBeDisplay(guestUserLogin);
         jsClick(guestUserLogin);
         waitForElementToBeDisplay(homePageHeader);
-        Assert.assertTrue(homePageHeader.isDisplayed(), "user unable to login as a guest user");
+        Assert.assertTrue(homePageHeader.isDisplayed(), "User is not able to login as a guest user");
     }
 }
 

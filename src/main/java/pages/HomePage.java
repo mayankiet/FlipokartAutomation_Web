@@ -28,7 +28,12 @@ public class HomePage extends BasePage{
         searchBox.sendKeys(searchKey);
         searchButton.click();
         waitForElementToBeDisplay(searchResult);
-        Assert.assertTrue(searchResult.getText().contains(searchKey), "search product is not available , expected " + searchKey + " but found " + searchResult.getText());
+        Assert.assertTrue(searchResult.getText().contains(searchKey), "Search product is not available , expected " + searchKey + " but found " + searchResult.getText());
 
+    }
+
+    public void verifySearchNavigation(String searchItem){
+        String currentUrl = getCurrentUrl();
+        Assert.assertTrue(currentUrl.equalsIgnoreCase(searchItem), "User didn't navigate to search item");
     }
 }

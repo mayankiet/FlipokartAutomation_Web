@@ -41,7 +41,7 @@ public class ProductSearchPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void isAllFilterIsDisplay() {
+    public void verifyAllFilterIsDisplay() {
         waitForListOfElementToBeDisplay(ListOfFilter);
         ListOfFilter.forEach(e ->
                 Assert.assertTrue(e.isDisplayed()));
@@ -60,7 +60,7 @@ public class ProductSearchPage extends BasePage {
 
     }
 
-    public void selectLowToHighFilter() {
+    public void clickAndVerifyLowToHighFilter() {
         waitForElementToBeDisplay(priceLowToHighFilter);
         jsClick(priceLowToHighFilter);
         waitForElementToBeVisible(checkFilterApplied);

@@ -1,13 +1,13 @@
-package utilities;
+package utils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class ConfigReader {
+class PropertiesReader {
     private Properties prop = new Properties();
 
-    public ConfigReader() {
+    PropertiesReader() {
         String environment = System.getProperty("env");
         String propertiesFilePath = environment + ".properties";
         InputStream inputStream;
@@ -28,11 +28,20 @@ public class ConfigReader {
         return prop.getProperty("baseUrl");
     }
 
-    String getUserName() {
+
+    String getBrowserStackUsername() {
+        return prop.getProperty("browserStackUsername");
+    }
+
+    String getBrowserStackKey() {
+        return prop.getProperty("browserStackKey");
+    }
+
+    String getValidUserName() {
         return prop.getProperty("validUserName");
     }
 
-    String getPassword() {
+    String getValidPassword() {
         return prop.getProperty("validPassword");
     }
 
@@ -69,4 +78,6 @@ public class ConfigReader {
     String getUnregisteredMobileNo() {
         return prop.getProperty("unregisteredMobileNo");
     }
+
+
 }

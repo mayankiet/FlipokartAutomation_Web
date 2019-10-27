@@ -62,8 +62,6 @@ public class ProductDetailPage extends BasePage{
             }
 
         }
-
-
     }
 
     public void clickOnBuyButton() {
