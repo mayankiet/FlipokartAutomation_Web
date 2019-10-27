@@ -18,7 +18,6 @@ public class DriverInitializer {
         WebDriver webDriver = null;
 
         switch (browser) {
-
             case Browsers.FIREFOX:
                 webDriver = new FirefoxBrowser().getDriver();
                 break;

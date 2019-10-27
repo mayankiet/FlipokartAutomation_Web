@@ -1,13 +1,12 @@
-package TestBase;
+package testBase;
 
-import pages.ProductDetailPage;
-import pages.ProductSearchPage;
+import pages.*;
 import drivers.DriverInitializer;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.HomePage;
+
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -17,13 +16,18 @@ public class BaseTest {
     protected HomePage homePage;
     protected ProductSearchPage productSearchPage;
     protected ProductDetailPage productDetailPage;
+    protected LoginPage loginPage;
+    protected GuestUserSignUpPage guestUserSignUpPage;
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() throws Exception {
-        driver = new DriverInitializer(System.getProperty("driver")).init();
+        //driver = new DriverInitializer(System.getProperty("driver")).init();
+        driver = new DriverInitializer("chrome").init();
         homePage = new HomePage();
         productSearchPage = new ProductSearchPage();
         productDetailPage = new ProductDetailPage();
+        loginPage  = new LoginPage();
+        guestUserSignUpPage = new GuestUserSignUpPage();
     }
 
     protected void navigateTo(String url) {
